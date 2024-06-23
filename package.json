@@ -1,20 +1,23 @@
 {
-  "name": "federated-library-from-cdn",
-  "description": "Basic example of two applications that share the same library served from a CDN.",
+  "name": "shared-store-cross-framework",
+  "version": "0.0.0",
   "private": true,
   "workspaces": [
-    "./host",
-    "./app2",
-    "./remoteLibrary"
+    "./react-counter",
+    "./shared-store",
+    "./shell",
+    "./vue-counter"
   ],
-  "version": "1.0.0",
+  "description": "This example demos a Vue3 in React application which shares the same store.",
   "scripts": {
-    "build": "pnpm --filter federated-library-from-cdn-* --parallel build",
-    "legacy:build": "pnpm --filter federated-library-from-cdn-* --parallel legacy:build",
-    "start": "pnpm --filter federated-library-from-cdn-* --parallel start",
-    "legacy:start": "pnpm --filter federated-library-from-cdn-* --parallel legacy:start"
+    "start": "yarn workspaces foreach -A --parallel run start",
+    "build": "yarn workspaces foreach -A run build",
+    "serve": "yarn workspaces foreach -A --parallel run serve",
+    "clean": "yarn workspaces foreach -A --parallel run clean",
+    "e2e:ci": "yarn start & wait-on http-get://localhost:3001/ && npx cypress run --config-file ../cypress-e2e/config/cypress.config.ts --config '{\"supportFile\": \"../cypress-e2e/support/e2e.ts\"}' --spec \"./e2e/tests/runAll.cy.ts\" --browser=chrome"
   },
   "devDependencies": {
-    "concurrently": "7.6.0"
-  }
+    "wait-on": "7.2.0"
+  },
+  "packageManager": "yarn@4.3.1"
 }
