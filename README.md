@@ -1,37 +1,39 @@
-<img src="./src/assets/airsend-color.svg" width="250" />
+# federated-library-from-cdn
 
-Powered by Vue.js v2 + Vuex, the AirSend UI brings great collaboration UI/UX for users.
+![Screenshot_2023-08-29_13-57-10](https://github.com/marcofalcone/federated-library-from-cdn/assets/61291681/6347c456-3034-478a-8a88-ca3c1713f24e)
 
-## Requirements
+## Basic example of two applications that share the same library served from a CDN.
 
-* Node.js v14+
-* NPM
+## Usage
 
-## Setup
+### Install packages
 
-```bash
-npm install --legacy-peer-deps
+```
+npm i
 ```
 
-Also copy the `.env.sample` file to `.env` and set the values according to your setup (if you're using the dockerized
-Airsend Bootstrap Environment, it's not necessary).
+### Serve the two apps locally to see the federated button component from the CDN
 
-## Development Server
-
-```bash
-npm run serve
+```
+npm run start
 ```
 
-## Build
+### or
 
-```bash
+### Run dev server for remote library to make changes (localHost:3002)
+
+```
+npm run dev
+```
+
+### Create library federation bundle (remoteEntry.js) and deploy the dist folder on your CDN of choice
+
+```
 npm run build
 ```
 
-## Contributing
+### Insert library bundle endpoint "http//yourendpoint/remoteEntry.js" into the "remoteUrl" variable in the webpack config file and serve the two apps to see the federated component from the cdn (app1 on localHost:3000, app2 on localHost:3001)
 
-AirSend is an open source project and we are super happy to accept your contribution.
-
-To contribute, open a pull request with your changes explaining what are you fixing or implement, and how would that impact the application.
-
-![](./src/assets/big-illustration.svg)
+```
+npm run start
+```
