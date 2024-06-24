@@ -1,0 +1,2 @@
+function e(e){return{install(o){var r;let t=null!==(r=e.scopeName)&&void 0!==r?r:"root";o.config.globalProperties.scopeName=t,o.provide(o.config.globalProperties.scopeName,e.scope)}}}function o(e){let{scope:o}=(()=>{let e,o=t(),r=null==o?void 0:o.appContext.config.globalProperties.scopeName;return r&&(e=p(r)),{scopeName:r,scope:e}})();return o?r(e,{scope:o}):e}import{scopeBind as r}from'effector/effector.mjs';import{getCurrentInstance as t,inject as p}from'vue';export{e as VueSSRPlugin,o as useEvent};
+//# sourceMappingURL=ssr.mjs.map

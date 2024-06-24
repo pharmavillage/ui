@@ -1,0 +1,2 @@
+Object.defineProperty(exports,'__esModule',{value:1});var effector=require('effector'),e=require('vue');exports.VueSSRPlugin=e=>({install(o){var r;let t=null!==(r=e.scopeName)&&void 0!==r?r:"root";o.config.globalProperties.scopeName=t,o.provide(o.config.globalProperties.scopeName,e.scope)}}),exports.useEvent=o=>{let{scope:r}=(()=>{let o,r=e.getCurrentInstance(),t=null==r?void 0:r.appContext.config.globalProperties.scopeName;return t&&(o=e.inject(t)),{scopeName:t,scope:o}})();return r?effector.scopeBind(o,{scope:r}):o};
+//# sourceMappingURL=ssr.cjs.js.map
