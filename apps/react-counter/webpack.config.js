@@ -4,7 +4,7 @@ module.exports = {
   entry: './src/index',
   mode: 'development',
   devServer: {
-    port: 3002,
+    port: 58841,
   },
   output: {
     publicPath: 'auto',
@@ -33,7 +33,7 @@ module.exports = {
       name: 'react_counter',
       filename: 'remoteEntry.js',
       remotes: {
-        store: `store@http://localhost:3003/remoteEntry.js`,
+        store: `store@http://localhost:55955/remoteEntry.js`,
       },
       exposes: {
         './ReactCounter': './src/ReactCounter',

@@ -1,5 +1,5 @@
 {
-  "name": "shared-store-cross-framework_vue-counter",
+  "name": "vue-counter",
   "private": true,
   "version": "1.0.0",
   "scripts": {
@@ -15,12 +15,12 @@
     "effector": "^22.8.7",
     "effector-vue": "^22.2.0",
     "serve": "^13.0.0",
-    "vue": "^3.0.11"
+    "vue": "^3.4.30"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "7.24.7",
     "@babel/preset-env": "7.24.7",
-    "@vue/runtime-dom": "3.4.30",
+    "@vue/runtime-dom": "^3.4.30",
     "css-loader": "6.11.0",
     "file-loader": "6.2.0",
     "mini-css-extract-plugin": "2.9.0",

@@ -11,7 +11,7 @@ module.exports = {
     static: {
       directory: path.join(__dirname, 'dist'),
     },
-    port: 3001,
+    port: 62621,
   },
   output: {
     publicPath: 'auto',
@@ -43,9 +43,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'app1',
       remotes: {
-        react_counter: `react_counter@${getRemoteEntryUrl(3002)}`,
-        store: `store@${getRemoteEntryUrl(3003)}`,
-        vue_counter: `vue_counter@${getRemoteEntryUrl(3004)}`,
+        react_counter: `react_counter@${getRemoteEntryUrl(58841)}`,
+        store: `store@${getRemoteEntryUrl(55955)}`,
+        vue_counter: `vue_counter@${getRemoteEntryUrl(51997)}`,
       },
       shared: {
         react: { singleton: true },

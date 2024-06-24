@@ -3,21 +3,20 @@
   "version": "0.0.0",
   "private": true,
   "workspaces": [
-    "./react-counter",
-    "./shared-store",
-    "./shell",
-    "./vue-counter"
+    "./apps/*"
   ],
   "description": "This example demos a Vue3 in React application which shares the same store.",
   "scripts": {
-    "start": "pnpm --filter vue3-demo_* --parallel start",
-    "build": "pnpm --filter vue3-demo_* --parallel build",
-    "serve": "pnpm --filter vue3-demo_* --parallel serve",
-    "clean": "pnpm --filter vue3-demo_* --parallel clean",
+    "start": "yarn workspaces foreach --all -ptv run start",
+    "build": "yarn workspaces foreach --all -ptv run build",
+    "serve": "yarn workspaces foreach --all -ptv run serve",
+    "clean": "yarn workspaces foreach --all -ptv run clean",
     "e2e:ci": "pnpm start & wait-on http-get://localhost:3001/ && npx cypress run --config-file ../cypress-e2e/config/cypress.config.ts --config '{\"supportFile\": \"../cypress-e2e/support/e2e.ts\"}' --spec \"./e2e/tests/runAll.cy.ts\" --browser=chrome"
   },
   "devDependencies": {
     "wait-on": "7.2.0"
   },
-  "packageManager": "yarn@4.3.1"
+  "dependencies": {
+    "vue": "^3.4.30"
+  }
 }

@@ -65,7 +65,7 @@ module.exports = () => ({
       name: 'vue_counter',
       filename: 'remoteEntry.js',
       remotes: {
-        store: `store@http://localhost:3003/remoteEntry.js`,
+        store: `store@http://localhost:55955/remoteEntry.js`,
       },
       exposes: {
         './VueCounter': './src/bootstrap',
@@ -80,6 +80,6 @@ module.exports = () => ({
     new VueLoaderPlugin(),
   ],
   devServer: {
-    port: 3004,
+    port: 51997,
   },
 });
