@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   react-counter:
     container_name: react-counter
