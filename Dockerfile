@@ -6,6 +6,7 @@ WORKDIR /fe
 # Copy package files and install dependencies
 COPY package.json .
 # COPY yarn.lock .
+COPY sandbox.config.js .
 COPY .yarnrc.yml .
 COPY ./apps/$BUILD_CONTEXT/package.json apps/$BUILD_CONTEXT/
 COPY ./components/lib/package.json components/lib/

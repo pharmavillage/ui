@@ -21,13 +21,12 @@
   "scripts": {
     "start": "webpack serve --config webpack.config.js",
     "build": "webpack --mode production",
-    "serve": "serve dist -p 3001",
+    "serve": "serve dist -p 62621",
     "clean": "rm -rf dist"
   },
   "dependencies": {
     "effector": "^22.8.7",
     "effector-react": "^22.5.4",
-    "lib": "workspace:^",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-is": "^18.3.1",

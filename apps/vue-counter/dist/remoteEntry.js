@@ -40,13 +40,13 @@ __webpack_require__.d(exports, {
 
 /***/ }),
 
-/***/ 672:
+/***/ 278:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var __webpack_error__ = new Error();
 module.exports = new Promise((resolve, reject) => {
 	if(typeof store !== "undefined") return resolve();
-	__webpack_require__.l("[object Promise]", (event) => {
+	__webpack_require__.l("http://locahost:55955/remoteEntry.js", (event) => {
 		if(typeof store !== "undefined") return resolve();
 		var errorType = event && (event.type === 'load' ? 'missing' : event.type);
 		var realSrc = event && event.target && event.target.src;
@@ -233,7 +233,7 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 			"103": [
 /******/ 				"default",
 /******/ 				"./Counter",
-/******/ 				672
+/******/ 				278
 /******/ 			]
 /******/ 		};
 /******/ 		__webpack_require__.f.remotes = (chunkId, promises) => {
@@ -324,7 +324,7 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 				case "default": {
 /******/ 					register("effector", "22.8.8", () => (__webpack_require__.e(810).then(() => (() => (__webpack_require__(810))))));
 /******/ 					register("vue", "3.4.30", () => (__webpack_require__.e(539).then(() => (() => (__webpack_require__(539))))));
-/******/ 					initExternal(672);
+/******/ 					initExternal(278);
 /******/ 				}
 /******/ 				break;
 /******/ 			}

@@ -2,16 +2,16 @@
   "name": "shared-store-cross-framework",
   "version": "0.0.0",
   "private": true,
+  "description": "This example demos a Vue3 in React application which shares the same store.",
   "workspaces": [
     "./apps/*",
     "./components/*"
   ],
-  "description": "This example demos a Vue3 in React application which shares the same store.",
   "scripts": {
-    "start": "yarn workspaces foreach --all -ptv run start",
-    "build": "yarn workspaces foreach  --all -ptv run build",
-    "serve": "yarn workspaces foreach --all -ptv run serve",
-    "clean": "yarn workspaces foreach --all -ptv run clean",
+    "start": "pnpm --filter '!shared-store-cross-framework'  --parallel start",
+    "build": "pnpm --filter '!shared-store-cross-framework'  build",
+    "serve": "pnpm --filter '!shared-store-cross-framework'  --parallel serve",
+    "clean": "pnpm --filter '!shared-store-cross-framework'  --parallel clean",
     "e2e:ci": "pnpm start & wait-on http-get://localhost:3001/ && npx cypress run --config-file ../cypress-e2e/config/cypress.config.ts --config '{\"supportFile\": \"../cypress-e2e/support/e2e.ts\"}' --spec \"./e2e/tests/runAll.cy.ts\" --browser=chrome"
   },
   "devDependencies": {
@@ -20,6 +20,11 @@
     "winston": "^3.13.0"
   },
   "dependencies": {
-    "webpack": "5.92.1"
-  }
+    "html-webpack-plugin": "^5.6.0",
+    "vue-loader": "^17.4.2",
+    "webpack": "5.92.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  },
+  "packageManager": "pnpm@9.4.0+sha512.f549b8a52c9d2b8536762f99c0722205efc5af913e77835dbccc3b0b0b2ca9e7dc8022b78062c17291c48e88749c70ce88eb5a74f1fa8c4bf5e18bb46c8bd83a"
 }

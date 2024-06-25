@@ -1,9 +1,7 @@
 const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { getRemoteURL } = require('lib');
 const { ModuleFederationPlugin } = require('webpack').container;
-const pkg = require('./package.json');
 
 module.exports = () => ({
   mode: 'development',
@@ -67,7 +65,7 @@ module.exports = () => ({
       name: 'vue_counter',
       filename: 'remoteEntry.js',
       remotes: {
-        store: `store@${getRemoteURL([55955], `/remoteEntry.js`, pkg)}`,
+        store: `store@${getRemoteEntryUrl(55955)}`,
       },
       exposes: {
         './VueCounter': './src/bootstrap',
@@ -85,3 +83,18 @@ module.exports = () => ({
     port: 51997,
   },
 });
+
+function getRemoteEntryUrl(port) {
+  const { CODESANDBOX_SSE, HOSTNAME = '' } = process.env;
+
+  // Check if the example is running on codesandbox
+  // https://codesandbox.io/docs/environment
+  if (!CODESANDBOX_SSE) {
+    return `//localhost:${port}/remoteEntry.js`;
+  }
+
+  const parts = HOSTNAME.split('-');
+  const codesandboxId = parts[parts.length - 1];
+
+  return `//${codesandboxId}-${port}.sse.codesandbox.io/remoteEntry.js`;
+}

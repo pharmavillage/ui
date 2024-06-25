@@ -1,9 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
 const path = require('path');
-const { getRemoteURL } = require('lib');
 const { VueLoaderPlugin } = require('vue-loader');
-const pkg = require('./package.json');
+const package = require('./package.json');
 
 module.exports = {
   entry: './src/index',
@@ -39,27 +38,18 @@ module.exports = {
       },
     ],
   },
-  //http://localhost:3002/remoteEntry.js
   plugins: [
     new ModuleFederationPlugin({
       name: 'app1',
       remotes: {
-        react_counter: `react_counter@${getRemoteEntryUrl(
-          [58841],
-          `/remoteEntry.js`,
-          pkg
-        )}`,
-        store: `store@${getRemoteURL([55955], `/remoteEntry.js, ${pkg}`)}`,
-        vue_counter: `vue_counter@${getRemoteEntryUrl(
-          [51997],
-          `/remoteEntry.js`,
-          pkg
-        )}`,
+        react_counter: `react_counter@${getRemoteEntryUrl(58841)}`,
+        store: `store@${getRemoteEntryUrl(55955)}`,
+        vue_counter: `vue_counter@${getRemoteEntryUrl(51997)}`,
       },
       shared: {
         react: { singleton: true },
         'react-dom': { singleton: true },
-        vue: { singleton: true, requiredVersion: pkg.dependencies.vue },
+        vue: { singleton: true, requiredVersion: package.dependencies.vue },
         effector: { singleton: true },
         'effector-react': { singleton: true },
         'effector-vue': { singleton: true },
