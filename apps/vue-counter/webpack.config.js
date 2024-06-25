@@ -1,7 +1,9 @@
 const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { getRemoteURL } = require('lib');
 const { ModuleFederationPlugin } = require('webpack').container;
+const pkg = require('./package.json');
 
 module.exports = () => ({
   mode: 'development',
@@ -65,7 +67,7 @@ module.exports = () => ({
       name: 'vue_counter',
       filename: 'remoteEntry.js',
       remotes: {
-        store: `store@http://localhost:55955/remoteEntry.js`,
+        store: `store@${getRemoteURL([55955], `/remoteEntry.js`, pkg)}`,
       },
       exposes: {
         './VueCounter': './src/bootstrap',

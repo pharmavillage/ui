@@ -1,4 +1,6 @@
+const { getRemoteURL } = require('lib');
 const { ModuleFederationPlugin } = require('webpack').container;
+const pkg = require('./package.json');
 
 module.exports = {
   entry: './src/index',
@@ -33,7 +35,7 @@ module.exports = {
       name: 'react_counter',
       filename: 'remoteEntry.js',
       remotes: {
-        store: `store@http://localhost:55955/remoteEntry.js`,
+        store: `store@${getRemoteURL([55955], `/remoteEntry.js`, pkg)}`,
       },
       exposes: {
         './ReactCounter': './src/ReactCounter',

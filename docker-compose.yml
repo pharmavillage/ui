@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        - BUILD_CONTEXT=react-counter
+        BUILD_CONTEXT: react-counter
     ports:
       - '58841:58841'
   shell:
@@ -14,7 +14,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        - BUILD_CONTEXT=shell
+        BUILD_CONTEXT: shell
     ports:
       - '62621:62621'
   shared-store:
@@ -23,7 +23,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        - BUILD_CONTEXT=shared-store
+        BUILD_CONTEXT: shared-store
     ports:
       - '55955:55955'
   vue-counter:
@@ -32,6 +32,6 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        - BUILD_CONTEXT=vue-counter
+        BUILD_CONTEXT: vue-counter
     ports:
       - '51997:51997'

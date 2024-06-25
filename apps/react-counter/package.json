@@ -2,6 +2,10 @@
   "name": "react-counter",
   "version": "0.0.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/your-repository.git"
+  },
   "devDependencies": {
     "@babel/core": "7.24.7",
     "@babel/preset-react": "7.24.7",
@@ -22,6 +26,7 @@
   "dependencies": {
     "effector": "^22.8.7",
     "effector-react": "^22.5.4",
+    "lib": "workspace:^",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-is": "^18.3.1",

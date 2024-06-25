@@ -3,20 +3,23 @@
   "version": "0.0.0",
   "private": true,
   "workspaces": [
-    "./apps/*"
+    "./apps/*",
+    "./components/*"
   ],
   "description": "This example demos a Vue3 in React application which shares the same store.",
   "scripts": {
     "start": "yarn workspaces foreach --all -ptv run start",
-    "build": "yarn workspaces foreach --all -ptv run build",
+    "build": "yarn workspaces foreach  --all -ptv run build",
     "serve": "yarn workspaces foreach --all -ptv run serve",
     "clean": "yarn workspaces foreach --all -ptv run clean",
     "e2e:ci": "pnpm start & wait-on http-get://localhost:3001/ && npx cypress run --config-file ../cypress-e2e/config/cypress.config.ts --config '{\"supportFile\": \"../cypress-e2e/support/e2e.ts\"}' --spec \"./e2e/tests/runAll.cy.ts\" --browser=chrome"
   },
   "devDependencies": {
-    "wait-on": "7.2.0"
+    "node-fetch": "^3.3.2",
+    "wait-on": "7.2.0",
+    "winston": "^3.13.0"
   },
   "dependencies": {
-    "vue": "^3.4.30"
+    "webpack": "5.92.1"
   }
 }
