@@ -9,10 +9,21 @@
   "devDependencies": {
     "@babel/core": "7.24.7",
     "@babel/preset-react": "7.24.7",
+    "@chromatic-com/storybook": "^1.6.0",
+    "@storybook/addon-essentials": "8.1.9",
+    "@storybook/addon-interactions": "8.1.9",
+    "@storybook/addon-links": "8.1.9",
+    "@storybook/addon-webpack5-compiler-swc": "^1.0.4",
+    "@storybook/blocks": "8.1.9",
+    "@storybook/test": "8.1.9",
+    "@storybook/vue3": "8.1.9",
+    "@storybook/vue3-webpack5": "8.1.9",
+    "@vue/compiler-sfc": "^3.4.31",
     "@vue/runtime-dom": "3.4.30",
     "babel-loader": "8.3.0",
     "html-webpack-plugin": "5.6.0",
     "serve": "13.0.4",
+    "storybook": "8.1.9",
     "vue-loader": "17.0.1",
     "webpack": "5.92.1",
     "webpack-cli": "4.10.0",
@@ -22,7 +33,9 @@
     "start": "webpack serve --config webpack.config.js",
     "build": "webpack --mode production",
     "serve": "serve dist -p 62621",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "effector": "^22.8.7",
