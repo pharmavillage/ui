@@ -5,7 +5,8 @@
   "description": "This example demos a Vue3 in React application which shares the same store.",
   "workspaces": [
     "./apps/*",
-    "./components/*"
+    "./components/*",
+    "./modules/*"
   ],
   "scripts": {
     "start": "pnpm --filter '!shared-store-cross-framework'  --parallel start",
